@@ -1,0 +1,6 @@
+.idea
+scripts/steamdb/output/
+scripts/mysql/output/
+/__pycache__/
+.env.local
+/output/

@@ -1,0 +1,21 @@
+[project]
+name = "sae-data-s4"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11, <3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    "cloudscraper>=1.2.71",
+    "dateparser>=1.2.1",
+    "dotenv>=0.9.9",
+    "pandas>=2.2.3",
+    "pymysql>=1.1.1",
+    "pyvirtualdisplay>=3.0",
+    "requests[socks]>=2.32.3",
+    "selenium>=4.29.0",
+    "seleniumbase>=4.35.7",
+    "sqlalchemy>=2.0.39",
+    "stem>=1.8.2",
+    "undetected-chromedriver>=3.5.5",
+]
