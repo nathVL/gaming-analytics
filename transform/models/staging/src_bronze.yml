@@ -1,0 +1,6 @@
+sources:
+  - name: raw_data
+    schema: main
+    tables:
+      - name: bronze_steam
+      - name: bronze_twitch

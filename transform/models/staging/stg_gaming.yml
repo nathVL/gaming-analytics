@@ -1,0 +1,12 @@
+models:
+  - name: stg_steam
+    columns:
+      - name: appid
+        tests:
+          - not_null
+          - unique
+  - name: stg_twitch
+    columns:
+      - name: appid
+        tests:
+          - not_null

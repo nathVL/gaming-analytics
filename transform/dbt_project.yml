@@ -18,6 +18,4 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   gaming_analytics:
-    example:
-      +materialized: view
-
+    +materialized: table
