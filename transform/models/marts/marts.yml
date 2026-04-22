@@ -50,14 +50,16 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_games')
-              field: game_key
+              arguments:
+                to: ref('dim_games')
+                field: game_key
       - name: date_key
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
 
   - name: bridge_game_developer
     description: "Bridge table: games to developers (many-to-many)"
@@ -66,14 +68,16 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_games')
-              field: game_key
+              arguments:
+                to: ref('dim_games')
+                field: game_key
       - name: developer_key
         tests:
           - not_null
           - relationships:
-              to: ref('dim_developer')
-              field: developer_key
+              arguments:
+                to: ref('dim_developer')
+                field: developer_key
 
   - name: bridge_game_genre
     description: "Bridge table: games to genres (many-to-many)"
@@ -82,14 +86,16 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_games')
-              field: game_key
+              arguments:
+                to: ref('dim_games')
+                field: game_key
       - name: genre_key
         tests:
           - not_null
           - relationships:
-              to: ref('dim_genre')
-              field: genre_key
+              arguments:
+                to: ref('dim_genre')
+                field: genre_key
 
   - name: bridge_game_category
     description: "Bridge table: games to categories (many-to-many)"
@@ -98,11 +104,13 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_games')
-              field: game_key
+              arguments:
+                to: ref('dim_games')
+                field: game_key
       - name: category_key
         tests:
           - not_null
           - relationships:
-              to: ref('dim_category')
-              field: category_key
+              arguments:
+                to: ref('dim_category')
+                field: category_key
