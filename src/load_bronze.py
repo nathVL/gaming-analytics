@@ -1,6 +1,6 @@
 import duckdb
 
-from config import setup_logging, DB_PATH, DB_DIR, DATA_DIR
+from src.config import setup_logging, DB_PATH, DB_DIR, DATA_DIR
 
 logger = setup_logging()
 

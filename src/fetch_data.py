@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 import requests
 
-from config import setup_logging, DATA_DIR, DATASET_URL
+from src.config import setup_logging, DATA_DIR, DATASET_URL
 
 logger = setup_logging()
 
