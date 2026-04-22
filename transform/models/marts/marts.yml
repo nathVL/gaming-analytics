@@ -1,0 +1,108 @@
+models:
+  - name: dim_games
+    description: "Dimension table for Steam games"
+    columns:
+      - name: game_key
+        tests:
+          - not_null
+          - unique
+      - name: appid
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: "Date dimension from Twitch monthly data"
+    columns:
+      - name: date_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_developer
+    description: "Dimension table for game developers"
+    columns:
+      - name: developer_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_genre
+    description: "Dimension table for game genres"
+    columns:
+      - name: genre_key
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_category
+    description: "Dimension table for game categories"
+    columns:
+      - name: category_key
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_twitch_data
+    description: "Fact table for Twitch streaming metrics"
+    columns:
+      - name: game_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_games')
+              field: game_key
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+
+  - name: bridge_game_developer
+    description: "Bridge table: games to developers (many-to-many)"
+    columns:
+      - name: game_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_games')
+              field: game_key
+      - name: developer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_developer')
+              field: developer_key
+
+  - name: bridge_game_genre
+    description: "Bridge table: games to genres (many-to-many)"
+    columns:
+      - name: game_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_games')
+              field: game_key
+      - name: genre_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_genre')
+              field: genre_key
+
+  - name: bridge_game_category
+    description: "Bridge table: games to categories (many-to-many)"
+    columns:
+      - name: game_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_games')
+              field: game_key
+      - name: category_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_category')
+              field: category_key
