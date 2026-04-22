@@ -4,6 +4,7 @@ import subprocess
 
 from src.fetch_data import run_data_ingestion
 from src.load_bronze import load_bronze
+from src.transform import run_dbt
 from src.config import setup_logging
 
 logger = setup_logging()
@@ -14,7 +15,7 @@ def run_pipeline():
 
     run_data_ingestion()
     load_bronze()
-    # TODO: add the dbt run
+    run_dbt()
     
     logger.info("--- Pipeline ended successfully ! ---")
 

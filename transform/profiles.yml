@@ -2,12 +2,12 @@ gaming_analytics:
   outputs:
     dev:
       type: duckdb
-      path: '../database/warehouse.duckdb'
+      path: './database/warehouse.duckdb'
       threads: 1
 
     prod:
       type: duckdb
-      path: '../database/warehouse.duckdb'
+      path: './database/warehouse.duckdb'
       threads: 4
 
   target: dev
